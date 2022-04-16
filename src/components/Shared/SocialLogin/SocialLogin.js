@@ -43,6 +43,7 @@ const SocialLogin = () => {
                     onClick={() => signInWithGithub()}
                     className='icons github-icon'></AiFillGithub>  </div>
             </div>
+            <p className='w-50 mx-auto'> <hr /> </p>
             {errorElement}
 
         </div>
