@@ -1,0 +1,21 @@
+.brand-name{
+    text-decoration: none;
+    color: #984447 ;
+    font-size: 24px;
+    padding-right: 10px;
+}
+.brand-name:hover{
+    color: aliceblue;
+}
+
+
+.links{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+.links:hover{
+    color: #984447;
+}
