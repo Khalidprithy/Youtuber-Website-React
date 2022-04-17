@@ -7,6 +7,7 @@ import About from './components/Pages/About/About';
 import Blog from './components/Pages/Blog/Blog';
 import Courses from './components/Pages/Courses/Courses';
 import MainPage from './components/Pages/MainPage/MainPage';
+import NotFound from './components/Pages/NotFound/NotFound';
 import Shop from './components/Pages/Shop/Shop';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/about' element={<About></About>} />
         <Route path='/login' element={<Login></Login>} />
         <Route path='/signup' element={<SignUp></SignUp>} />
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
   );
