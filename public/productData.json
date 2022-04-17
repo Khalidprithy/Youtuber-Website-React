@@ -2,35 +2,35 @@
     {
         "id": 1,
         "name": "Lonnard",
-        "image": "http://dummyimage.com/119x100.png/ff4444/ffffff",
+        "image": "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C71yw30LACUL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UX342_.png",
         "price": 50,
         "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus."
     },
     {
         "id": 2,
         "name": "Mersey",
-        "image": "http://dummyimage.com/250x100.png/5fa2dd/ffffff",
+        "image": "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C71yw30LACUL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UX342_.png",
         "price": 64,
         "description": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat."
     },
     {
         "id": 3,
         "name": "David",
-        "image": "http://dummyimage.com/169x100.png/ff4444/ffffff",
+        "image": "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C71yw30LACUL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UX342_.png",
         "price": 65,
         "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio."
     },
     {
         "id": 4,
         "name": "Clayborn",
-        "image": "http://dummyimage.com/166x100.png/cc0000/ffffff",
+        "image": "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C71yw30LACUL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UX342_.png",
         "price": 65,
         "description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque."
     },
     {
         "id": 5,
         "name": "Renard",
-        "image": "http://dummyimage.com/107x100.png/dddddd/000000",
+        "image": "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C71yw30LACUL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UX342_.png",
         "price": 34,
         "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."
     },

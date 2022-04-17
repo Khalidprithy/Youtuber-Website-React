@@ -1,0 +1,19 @@
+.banner{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 40px 40px;
+}
+
+.banner-text{
+    font-size: 12px;
+    color: rgb(58, 58, 58);
+    width: 300px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .banner{
+        grid-template-columns: 1fr;
+    }
+  }
