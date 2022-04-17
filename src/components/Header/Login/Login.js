@@ -31,14 +31,6 @@ const Login = () => {
     if (user) {
         navigate('/home')
     }
-    if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
-    }
-
 
     return (
         <div className='container text-center mt-5'>
@@ -51,12 +43,18 @@ const Login = () => {
                 <input
                     onBlur={handlePasswordBlur}
                     className="m-2 p-2 bg-light border-0 rounded" type="password" name="password" id="" placeholder='Password' />
+                <p style={{ color: 'red' }}>{error?.message}</p>
                 <button
                     onClick={handleUserLogin}
                     className="m-2 btn btn-danger">Login</button>
                 <div>
-                    <Link to='/signup' className='text-danger text-decoration-none'>Don't have an account?</Link>
-                    <p className='btn btn-link text-dark text-decoration-none'> Forgot password?</p>
+                    {
+                        loading && <p>Loading...</p>
+                    }
+                    <div className='d-md-flex align-items-center justify-content-between '>
+                        <Link to='/signup' className='text-danger text-decoration-none ps-2'>Don't have an account?</Link>
+                        <button className='btn btn-link text-dark text-decoration-none'> Forgot password?</button>
+                    </div>
                 </div>
 
             </form>

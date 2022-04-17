@@ -1,4 +1,5 @@
 import React from 'react';
+import './SocialLogin.css'
 import { AiFillFacebook, AiFillGoogleSquare, AiFillGithub } from 'react-icons/ai';
 import auth from '../../../firebase.init';
 import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -42,7 +43,12 @@ const SocialLogin = () => {
                     onClick={() => signInWithGithub()}
                     className='icons github-icon'></AiFillGithub>  </div>
             </div>
-            {/* <p className='w-50 mx-auto'> <hr /> </p> */}
+
+            <div className='d-flex align-items-center justify-content-center'>
+                <div className='line w-25'></div>
+                <p className='px-2 mt-2'>or</p>
+                <div className='line w-25'></div>
+            </div>
             {errorElement}
 
         </div>

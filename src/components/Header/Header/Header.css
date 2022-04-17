@@ -1,3 +1,8 @@
+.header{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+
 .brand-name{
     text-decoration: none;
     color: #984447 ;
@@ -13,9 +18,23 @@
     text-decoration: none;
     color: aliceblue;
     padding: 0 5px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .links:hover{
     color: #984447;
+}
+
+.sign-out{
+    cursor: pointer;
+    /* margin-left: 20px; */
+    border: none;
+    background: none;
+    color: rgb(204, 203, 201);
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.sign-out:hover{
+    color:  #984447;
 }

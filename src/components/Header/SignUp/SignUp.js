@@ -72,7 +72,7 @@ const SignUp = () => {
                     {showError}
                 </p>
                 <input className='form-submit btn btn-danger' type="submit" value="Sign Up" />
-                <Link to='/login' className='text-danger text-decoration-none'>Already have an account?</Link>
+                <Link to='/login' className='text-danger text-decoration-none pt-4'>Already have an account?</Link>
             </form>
         </div>
     );

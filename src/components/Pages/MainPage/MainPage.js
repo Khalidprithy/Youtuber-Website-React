@@ -1,9 +1,9 @@
 import React from 'react';
+import './MainPage.css'
 
 const MainPage = () => {
     return (
-        <div>
-            <h4>Main Page</h4>
+        <div className='container text-center main-page'>
         </div>
     );
 };
