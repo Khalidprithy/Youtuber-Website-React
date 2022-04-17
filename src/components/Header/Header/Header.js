@@ -8,10 +8,16 @@ import auth from '../../../firebase.init';
 
 const Header = () => {
 
-    const [user] = useAuthState(auth)
+    const [user, setUser] = useAuthState(auth)
 
     const handleSignOut = () => {
-        signOut(auth);
+        signOut(auth)
+            .then(() => {
+                setUser({})
+            })
+            .catch(error => {
+                setUser({});
+            })
     }
 
     return (
@@ -23,8 +29,8 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Link className='links' to="/home">Home</Link>
                         <Link className='links' to="/shop">Shop</Link>
-                        <Link className='links' to="/blog">Blog</Link>
                         <Link className='links' to="/courses">Courses</Link>
+                        <Link className='links' to="/blog">Blog</Link>
                         <Link className='links' to="/about">About</Link>
                     </Nav>
                     <Nav>

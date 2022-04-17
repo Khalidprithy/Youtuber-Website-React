@@ -35,6 +35,9 @@ const SignUp = () => {
 
     const handleCreateUser = e => {
         e.preventDefault()
+        if (email) {
+            setShowError('User already exists, Please login')
+        }
         if (password !== confirmPassword) {
             setShowError('Password did not matched')
         }
@@ -43,7 +46,11 @@ const SignUp = () => {
 
 
     if (loading) {
-        return <p>Loading...</p>;
+        return <div class="text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
     }
     if (user) {
         navigate('/home')

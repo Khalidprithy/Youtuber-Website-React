@@ -26,7 +26,7 @@ const Login = () => {
 
     const handleUserLogin = e => {
         e.preventDefault();
-        signInWithEmailAndPassword(email, password)
+        signInWithEmailAndPassword(email, password);
     }
     if (user) {
         navigate('/home')
@@ -49,7 +49,12 @@ const Login = () => {
                     className="m-2 btn btn-danger">Login</button>
                 <div>
                     {
-                        loading && <p>Loading...</p>
+                        loading &&
+                        <div class="text-center mt-2">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
                     }
                     <div className='d-md-flex align-items-center justify-content-between '>
                         <Link to='/signup' className='text-danger text-decoration-none ps-2'>Don't have an account?</Link>

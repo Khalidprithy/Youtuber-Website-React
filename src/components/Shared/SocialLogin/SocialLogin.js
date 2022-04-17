@@ -23,7 +23,11 @@ const SocialLogin = () => {
 
     }
     if (loadingGoogle || loadingGit || loadingFacebook) {
-        return <p>Loading...</p>;
+        return <div class="text-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>;
     }
     if (userGit || userGoogle || userFacebook) {
         navigate('/home')
