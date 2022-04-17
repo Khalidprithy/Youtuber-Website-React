@@ -31,7 +31,6 @@ const SocialLogin = () => {
 
     return (
         <div>
-            <h6>Sign up with</h6>
             <div className="d-flex align-items-center justify-content-center mb-4">
                 <div className="social-icons text-primary"> <AiFillFacebook
                     onClick={() => signInWithFacebook()}
@@ -43,7 +42,7 @@ const SocialLogin = () => {
                     onClick={() => signInWithGithub()}
                     className='icons github-icon'></AiFillGithub>  </div>
             </div>
-            <p className='w-50 mx-auto'> <hr /> </p>
+            {/* <p className='w-50 mx-auto'> <hr /> </p> */}
             {errorElement}
 
         </div>
