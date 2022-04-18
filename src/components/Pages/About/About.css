@@ -1,0 +1,14 @@
+.about-container{
+    height: 400px;
+}
+
+
+.about-img{
+    padding: 10px;
+    border-radius: 50%;
+    height: 100px;
+}
+
+.about-text{
+    width: 300px;
+}

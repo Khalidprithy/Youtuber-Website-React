@@ -6,10 +6,11 @@ import useCourse from '../../../hooks/useCourse';
 import ShowCourse from '../../Shared/ShowCourse/ShowCourse';
 import useProduct from '../../../hooks/useProduct';
 import ShowProduct from '../../Shared/ShowProduct/ShowProduct';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const MainPage = () => {
-    const [courses, setCourses] = useCourse()
-    const [products, setProducts] = useProduct();
+    const [courses] = useCourse()
+    const [products] = useProduct();
     const navigate = useNavigate();
 
     const handleBrowseAllCourses = () => {
@@ -27,7 +28,7 @@ const MainPage = () => {
                     <h4>Check My Courses </h4>
                     <button
                         onClick={handleBrowseAllCourses}
-                        className='btn btn-primary'>Browse all courses</button>
+                        className='btn btn-primary'>See all courses <AiOutlineArrowRight></AiOutlineArrowRight> </button>
                 </div>
                 <div className="row mx-auto">
                     {
@@ -55,10 +56,6 @@ const MainPage = () => {
                     }
                 </div>
             </div>
-
-
-
-
 
         </div>
 

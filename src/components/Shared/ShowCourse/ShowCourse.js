@@ -1,8 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ShowCourse.css'
 
 const ShowCourse = ({ course }) => {
     const { name, price, image, description } = course;
+    const navigat = useNavigate();
+
+    // const handle
 
     return (
         <div className="col g-5 col-sm-12 col-md-6 col-lg-4">
@@ -12,7 +16,7 @@ const ShowCourse = ({ course }) => {
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">{description}</p>
                     <p>${price}</p>
-                    <button href="#" className="btn btn-primary position-absolute bottom-0 mb-2">Details</button>
+                    <button className="btn btn-primary position-absolute bottom-0 mb-2">Enroll Now</button>
                 </div>
             </div>
         </div>

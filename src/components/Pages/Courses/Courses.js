@@ -8,7 +8,7 @@ const Courses = () => {
 
     return (
         <div>
-            <div className="row mx-auto">
+            <div className="row mx-auto mb-4">
                 {
                     courses.map(course => <ShowCourse
                         key={course.id}

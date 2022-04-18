@@ -33,7 +33,7 @@ const Login = () => {
     }
 
     return (
-        <div className='container text-center mt-5'>
+        <div className='container text-center my-5'>
             <h4 className='p-4'>Dev.Kbin</h4>
             <SocialLogin></SocialLogin>
             <form className='d-flex flex-column w-50 mx-auto'>
