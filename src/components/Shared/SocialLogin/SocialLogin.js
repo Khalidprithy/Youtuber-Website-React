@@ -4,6 +4,7 @@ import { AiFillFacebook, AiFillGoogleSquare, AiFillGithub } from 'react-icons/ai
 import auth from '../../../firebase.init';
 import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
 
 const SocialLogin = () => {
     const navigate = useNavigate();
@@ -23,11 +24,7 @@ const SocialLogin = () => {
 
     }
     if (loadingGoogle || loadingGit || loadingFacebook) {
-        return <div class="text-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>;
+        return <Loading></Loading>;
     }
     if (userGit || userGoogle || userFacebook) {
         navigate('/home')

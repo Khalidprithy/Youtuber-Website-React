@@ -3,23 +3,26 @@ import './SignUp.css'
 import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 import auth from '../../../firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import Loading from '../../Shared/Loading/Loading';
 
 
 const SignUp = () => {
     const navigate = useNavigate();
-    const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [showError, setShowError] = useState('');
+    const [agree, setAgree] = useState(false);
 
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { useSendEmailVerification: true });
+
+    const [updateProfile, updating, profileError] = useUpdateProfile(auth);
 
     const handleEmailBlur = e => {
         setEmail(e.target.value);
@@ -32,28 +35,30 @@ const SignUp = () => {
         setConfirmPassword(e.target.value);
     }
 
+    if (user) {
+        console.log(user);
+    }
 
-    const handleCreateUser = e => {
+
+    const handleCreateUser = async e => {
         e.preventDefault()
+        const displayName = e.target.name.value
         if (email) {
             setShowError('User already exists, Please login')
         }
         if (password !== confirmPassword) {
             setShowError('Password did not matched')
         }
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName, });
+        console.log('Updated profile');
+        navigate('/home');
+
     }
 
 
     if (loading) {
-        return <div class="text-center">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-    }
-    if (user) {
-        navigate('/home')
+        <Loading></Loading>
     }
 
 
@@ -78,7 +83,16 @@ const SignUp = () => {
                 <p style={{ color: 'red' }}>
                     {showError}
                 </p>
-                <input className='form-submit btn btn-danger' type="submit" value="Sign Up" />
+                <div>
+                    <input
+                        onClick={() => setAgree(!agree)}
+                        className='me-2' type="checkbox" name="terms" id="terms" />
+
+                    <label className={`pb-2 ${agree ? 'text-success' : ''}`} htmlFor="terms">Accept terms and condition</label>
+                </div>
+                <input
+                    disabled={!agree}
+                    className='form-submit btn btn-danger' type="submit" value="Sign Up" />
                 <Link to='/login' className='text-danger text-decoration-none pt-4'>Already have an account?</Link>
             </form>
         </div>

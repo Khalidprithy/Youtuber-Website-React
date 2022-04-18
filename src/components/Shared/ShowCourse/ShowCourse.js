@@ -4,9 +4,11 @@ import './ShowCourse.css'
 
 const ShowCourse = ({ course }) => {
     const { name, price, image, description } = course;
-    const navigat = useNavigate();
+    const navigate = useNavigate();
 
-    // const handle
+    const handleEnrollNow = () => {
+        navigate('/checkout')
+    }
 
     return (
         <div className="col g-5 col-sm-12 col-md-6 col-lg-4">
@@ -16,7 +18,7 @@ const ShowCourse = ({ course }) => {
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">{description}</p>
                     <p>${price}</p>
-                    <button className="btn btn-primary position-absolute bottom-0 mb-2">Enroll Now</button>
+                    <button onClick={handleEnrollNow} className="btn btn-primary position-absolute bottom-0 mb-2">Enroll Now</button>
                 </div>
             </div>
         </div>

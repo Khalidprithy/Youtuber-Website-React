@@ -11,6 +11,7 @@ import MainPage from './components/Pages/MainPage/MainPage';
 import NotFound from './components/Pages/NotFound/NotFound';
 import Shop from './components/Pages/Shop/Shop';
 import Footer from './components/Shared/Footer/Footer';
+import RequireAuth from './components/Shared/RequiredAuth/RequiredAuth';
 
 function App() {
   return (
@@ -22,7 +23,11 @@ function App() {
         <Route path='/shop' element={<Shop></Shop>} />
         <Route path='/blog' element={<Blog></Blog>} />
         <Route path='/courses' element={<Courses></Courses>} />
-        <Route path='/checkout' element={<Checkout></Checkout>} />
+        <Route path='/checkout' element={
+          <RequireAuth>
+            <Checkout></Checkout>
+          </RequireAuth>
+        } />
         <Route path='/about' element={<About></About>} />
         <Route path='/login' element={<Login></Login>} />
         <Route path='/signup' element={<SignUp></SignUp>} />

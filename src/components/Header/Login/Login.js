@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import './Login.css'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [
@@ -15,6 +18,8 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const handleEmailBlur = e => {
         setEmail(e.target.value)
@@ -29,7 +34,12 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     }
     if (user) {
-        navigate('/home')
+        navigate(from, { replace: true });
+    }
+
+    const resetPassword = async () => {
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
     }
 
     return (
@@ -50,15 +60,13 @@ const Login = () => {
                 <div>
                     {
                         loading &&
-                        <div class="text-center mt-2">
-                            <div class="spinner-border" role="status">
-                                <span class="visually-hidden">Loading...</span>
-                            </div>
-                        </div>
+                        <Loading></Loading>
                     }
                     <div className='d-md-flex align-items-center justify-content-between '>
                         <Link to='/signup' className='text-danger text-decoration-none ps-2'>Don't have an account?</Link>
-                        <button className='btn btn-link text-dark text-decoration-none'> Forgot password?</button>
+                        <button
+                            onClick={resetPassword}
+                            className='btn btn-link text-danger text-decoration-none'> Forgot password?</button>
                     </div>
                 </div>
 

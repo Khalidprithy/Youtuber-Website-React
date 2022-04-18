@@ -3,7 +3,7 @@ import useCourse from '../../../hooks/useCourse';
 import ShowCourse from '../../Shared/ShowCourse/ShowCourse';
 
 const Courses = () => {
-    const [courses, setCourses] = useCourse()
+    const [courses] = useCourse()
 
 
     return (
