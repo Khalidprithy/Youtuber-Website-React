@@ -21,7 +21,18 @@
     font-size: 14px;
 }
 
+.active-link{
+    text-decoration: none;
+    color: #984447;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
 .links:hover{
+    color: #984447;
+}
+
+.active-link:hover{
     color: #984447;
 }
 

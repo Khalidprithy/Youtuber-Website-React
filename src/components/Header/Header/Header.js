@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css'
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import auth from '../../../firebase.init';
@@ -23,15 +23,15 @@ const Header = () => {
     return (
         <Navbar className='header' collapseOnSelect expand="md" bg="dark" variant="dark">
             <Container>
-                <Link className='brand-name' to="/home">Dev.Kbin</Link>
+                <NavLink className='brand-name' to="/home">Dev.Kbin</NavLink>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Link className='links' to="/home">Home</Link>
-                        <Link className='links' to="/courses">Courses</Link>
-                        <Link className='links' to="/shop">Shop</Link>
-                        <Link className='links' to="/blog">Blog</Link>
-                        <Link className='links' to="/about">About</Link>
+                        <NavLink className={({ isActive }) => isActive ? 'active-link' : 'links'} to="/home">Home</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'active-link' : 'links'} to="/courses">Courses</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'active-link' : 'links'} to="/shop">Shop</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'active-link' : 'links'} to="/blog">Blog</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'active-link' : 'links'} to="/about">About</NavLink>
                     </Nav>
                     <Nav>
                         {
@@ -40,7 +40,7 @@ const Header = () => {
                                     onClick={handleSignOut}
                                     className='sign-out'>Sign out </button>
                                 :
-                                <Link className='links' to="/login">Login</Link>
+                                <NavLink className='links' to="/login">Login</NavLink>
                         }
                     </Nav>
                 </Navbar.Collapse>
