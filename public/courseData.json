@@ -4,34 +4,34 @@
         "name": "Python",
         "image": "https://st4.depositphotos.com/13672908/41107/v/600/depositphotos_411076072-stock-illustration-python-programming-language-concept-with.jpg",
         "price": "29.99",
-        "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui."
+        "description": "Python course for beginner with projects."
     },
     {
         "id": 112,
         "name": "Web Development",
         "image": "https://www.pngkey.com/png/detail/212-2125619_web-development-creative-web-design-banner.png",
         "price": 35,
-        "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu"
+        "description": "Web development full course, Basic to Pro"
     },
     {
         "id": 113,
         "name": "Video Production",
         "image": "https://www.michaelgroupltd.com/wp-content/uploads/2016/09/Marketing-video-production-chicago.jpg",
         "price": 40,
-        "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi."
+        "description": "30 classes on video production strategy."
     },
     {
         "id": 114,
-        "name": "Content Production",
+        "name": "Youtube Marketing",
         "image": "https://engagecontent.com.au/wp-content/uploads/2017/08/Content-production-for-websites.jpg",
         "price": 22,
-        "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia "
+        "description": "Best Youtube marketing course to help your channel grow "
     },
     {
         "id": 115,
         "name": "Creative Sponsorship",
         "image": "https://www.eventeny.com/blog/pic/2020-01-26-cover.png",
         "price": 15,
-        "description": "Vestibulum ac est lacinia nisi venenatis tristique"
+        "description": "This course will teach you everything about Sponsorship"
     }
 ]

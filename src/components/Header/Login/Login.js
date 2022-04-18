@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Login.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+    const emailRef = useRef('');
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -38,18 +41,25 @@ const Login = () => {
     }
 
     const resetPassword = async () => {
-        await sendPasswordResetEmail(email);
-        alert('Sent email');
+        if (email) {
+            const email = emailRef.current.value;
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else {
+            toast('please enter your email')
+        }
     }
 
     return (
         <div className='container text-center my-5'>
             <h4 className='p-4'>Dev.Kbin</h4>
             <SocialLogin></SocialLogin>
+            <ToastContainer />
             <form className='d-flex flex-column w-50 mx-auto'>
                 <input
                     onBlur={handleEmailBlur}
-                    className="m-2 p-2 bg-light border-0 rounded" type="email" name="email" id="" placeholder='Email' />
+                    className="m-2 p-2 bg-light border-0 rounded" ref={emailRef} type="email" name="email" id="" placeholder='Email' />
                 <input
                     onBlur={handlePasswordBlur}
                     className="m-2 p-2 bg-light border-0 rounded" type="password" name="password" id="" placeholder='Password' />
