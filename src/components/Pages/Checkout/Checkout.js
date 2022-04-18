@@ -1,10 +1,10 @@
 import React from 'react';
-
+import './Checkout.css'
 const Checkout = () => {
     return (
-        <div>
-            <h1>Thank you for your interest</h1>
-            <img src="https://www.netpremacy.com/wp-content/uploads/2018/09/Background-website-01.jpg" alt="" />
+        <div className='checkout text-center'>
+            <h1 className='pt-5'>Thank you.</h1>
+            <h4>Happy learning</h4>
         </div>
     );
 };

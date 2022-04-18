@@ -47,7 +47,7 @@ const MainPage = () => {
                         className='btn btn-primary'>Browse all</button>
                 </div>
 
-                <div className="row row-cols-1 row-cols-md-5 g-4 m-5">
+                <div className="row row-cols-1 row-cols-md-3 g-4 m-5">
                     {
                         products.slice(0, 5).map(product => <ShowProduct
                             key={product.id}
