@@ -35,6 +35,8 @@ const Login = () => {
     const handleUserLogin = e => {
         e.preventDefault();
         signInWithEmailAndPassword(email, password);
+        setEmail('');
+        setPassword('');
     }
     if (user) {
         navigate(from, { replace: true });
@@ -49,6 +51,7 @@ const Login = () => {
         else {
             toast('please enter your email')
         }
+
     }
 
     return (
@@ -56,16 +59,16 @@ const Login = () => {
             <h4 className='p-4'>Dev.Kbin</h4>
             <SocialLogin></SocialLogin>
             <ToastContainer />
-            <form className='d-flex flex-column w-50 mx-auto'>
+            <form onSubmit={handleUserLogin} className='d-flex flex-column w-50 mx-auto'>
                 <input
                     onBlur={handleEmailBlur}
-                    className="m-2 p-2 bg-light border-0 rounded" ref={emailRef} type="email" name="email" id="" placeholder='Email' />
+                    className="m-2 p-2 bg-light border-0 rounded" ref={emailRef} type="email" name="email" id="" placeholder='Email' required />
                 <input
                     onBlur={handlePasswordBlur}
-                    className="m-2 p-2 bg-light border-0 rounded" type="password" name="password" id="" placeholder='Password' />
+                    className="m-2 p-2 bg-light border-0 rounded" type="password" name="password" id="" placeholder='Password' required />
                 <p style={{ color: 'red' }}>{error?.message}</p>
                 <button
-                    onClick={handleUserLogin}
+                    type='submit'
                     className="m-2 btn btn-danger">Login</button>
                 <div>
                     {
@@ -79,7 +82,6 @@ const Login = () => {
                             className='btn btn-link text-danger text-decoration-none'> Forgot password?</button>
                     </div>
                 </div>
-
             </form>
         </div>
     );

@@ -4,7 +4,7 @@
 This is a React JS app for a upcoming Electric Vehicle 
 
 ## 🔗 Links
-[Netlify](https://smart-ev.netlify.app/Chart)
+[Firebase](https://dev-kbin-website.web.app/)
 
 ## Documentation
 This is a react application build for a Software Developer & Youtuber. In this website I have featured the courses he offers and also a shop for his fan to buy some of his products. 

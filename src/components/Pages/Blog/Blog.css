@@ -1,3 +1,10 @@
 .blog{
     font-family: 'Oswald', sans-serif;
 }
+
+.question{
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}

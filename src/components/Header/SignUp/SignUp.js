@@ -35,19 +35,17 @@ const SignUp = () => {
         setConfirmPassword(e.target.value);
     }
 
-    if (user) {
-        console.log(user);
-    }
-
 
     const handleCreateUser = async e => {
         e.preventDefault()
         const displayName = e.target.name.value
         if (email) {
             setShowError('User already exists, Please login')
+            return;
         }
         if (password !== confirmPassword) {
             setShowError('Password did not matched')
+            return;
         }
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName, });

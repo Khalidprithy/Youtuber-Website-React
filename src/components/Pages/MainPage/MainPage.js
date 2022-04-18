@@ -44,7 +44,7 @@ const MainPage = () => {
                     <h4>Check my Shop </h4>
                     <button
                         onClick={handleBrowseAllProduct}
-                        className='btn btn-primary'>Browse all</button>
+                        className='btn btn-primary'>Browse all  <AiOutlineArrowRight></AiOutlineArrowRight></button>
                 </div>
 
                 <div className="row row-cols-1 row-cols-md-3 g-4 m-5">

@@ -1,9 +1,17 @@
 import React from 'react';
 import './ShowProduct.css';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const ShowProduct = ({ product }) => {
     const { name, price, image } = product;
+    const navigate = useNavigate()
+
+
+    const handleBuyNow = () => {
+        navigate('/checkout')
+    }
+
     return (
         <div className="col">
             <div className='book'>
@@ -13,7 +21,7 @@ const ShowProduct = ({ product }) => {
                     <p>Price: ${price}</p>
                 </div>
                 <div className='btn-cart-icon'>
-                    <button className='cart-btn'>Add to Cart
+                    <button onClick={handleBuyNow} className='cart-btn'>Buy Now
                         <FaShoppingCart className='icon'></FaShoppingCart>
                     </button>
                 </div>
